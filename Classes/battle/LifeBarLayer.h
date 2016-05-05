@@ -11,7 +11,7 @@
 #define LIFEBARLAYER_H_
 
 #include "cocos2d.h"
-#include "pathview.hpp"
+#include "../utils/pathview.hpp"
 
 class LifeBarLayer : public cocos2d::Layer {
 public:

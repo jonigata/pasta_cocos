@@ -11,7 +11,7 @@
 #define TERRITORYLAYER_H_
 
 #include "cocos2d.h"
-#include "pathview.hpp"
+#include "../utils/pathview.hpp"
 #include "team.hpp"
 
 class TerritoryLayer : public cocos2d::Layer {

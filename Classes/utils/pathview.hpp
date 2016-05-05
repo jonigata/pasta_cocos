@@ -11,6 +11,7 @@
 #define PATHVIEW_HPP_
 
 #include <cstdint>
+#include "cocos2d.h"
 
 namespace pv {
 
@@ -382,7 +383,7 @@ public:
     struct Polygon {
         bool    fill;
         std::uint32_t  color;
-        std::vector<Vec> vertices;
+        std::vector<cocos2d::Vec> vertices;
     };
 
     template <class CB, class PB>

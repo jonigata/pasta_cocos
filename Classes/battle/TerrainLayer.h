@@ -11,7 +11,7 @@
 #define TERRAINLAYER_H_
 
 #include "cocos2d.h"
-#include "pathview.hpp"
+#include "../utils/pathview.hpp"
 
 class TerrainLayer : public cocos2d::Layer {
 public:

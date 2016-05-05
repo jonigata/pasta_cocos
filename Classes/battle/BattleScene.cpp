@@ -1,4 +1,4 @@
-#include "HelloWorldScene.h"
+#include "BattleScene.h"
 #include "TerrainLayer.h"
 #include "WaterLayer.h"
 #include "LifeBarLayer.h"
@@ -6,13 +6,13 @@
 
 USING_NS_CC;
 
-Scene* HelloWorld::createScene()
+Scene* BattleScene::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
     
     // 'layer' is an autorelease object
-    auto layer = HelloWorld::create();
+    auto layer = BattleScene::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -22,7 +22,7 @@ Scene* HelloWorld::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool BattleScene::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -45,7 +45,7 @@ bool HelloWorld::init()
     /////////////////////////////
     // 3. add your codes below...
 /*
-    auto sprite = Sprite::create("HelloWorld.png");
+    auto sprite = Sprite::create("BattleScene.png");
     sprite->setPosition(Vec2::ZERO);
     this->addChild(sprite, 0);
 */
@@ -101,7 +101,7 @@ bool HelloWorld::init()
 }
 
 
-void HelloWorld::menuCloseCallback(Ref* pSender)
+void BattleScene::menuCloseCallback(Ref* pSender)
 {
     Director::getInstance()->end();
 
@@ -110,7 +110,7 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 #endif
 }
 
-void HelloWorld::update(float delta) {
+void BattleScene::update(float delta) {
     // log("update");
     board_.update(delta);
     ai_.think(delta);

@@ -11,7 +11,7 @@
 #define WATERLAYER_H_
 
 #include "cocos2d.h"
-#include "pathview.hpp"
+#include "../utils/pathview.hpp"
 #include "water.hpp"
 
 class WaterLayer : public cocos2d::Layer {

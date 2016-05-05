@@ -10,8 +10,8 @@
 #ifndef WATER_HPP_
 #define WATER_HPP_
 
+#include "../utils/sph.hpp"
 #include "cocos2d.h"
-#include "sph.hpp"
 //#include "vector.hpp"
 #include "team_tag.hpp"
 #include "partawn.hpp"

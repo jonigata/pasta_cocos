@@ -147,22 +147,18 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\color.cpp" />
-    <ClCompile Include="..\Classes\gci.cpp" />
-    <ClCompile Include="..\Classes\gci2pathview.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
-    <ClCompile Include="..\Classes\LifeBarLayer.cpp" />
-    <ClCompile Include="..\Classes\TerrainLayer.cpp" />
-    <ClCompile Include="..\Classes\TerritoryLayer.cpp" />
-    <ClCompile Include="..\Classes\water.cpp" />
-    <ClCompile Include="..\Classes\WaterLayer.cpp" />
+    <ClCompile Include="..\Classes\battle\BattleScene.cpp" />
+    <ClCompile Include="..\Classes\battle\LifeBarLayer.cpp" />
+    <ClCompile Include="..\Classes\battle\TerrainLayer.cpp" />
+    <ClCompile Include="..\Classes\battle\TerritoryLayer.cpp" />
+    <ClCompile Include="..\Classes\battle\water.cpp" />
+    <ClCompile Include="..\Classes\battle\WaterLayer.cpp" />
+    <ClCompile Include="..\Classes\utils\color.cpp" />
+    <ClCompile Include="..\Classes\utils\gci.cpp" />
+    <ClCompile Include="..\Classes\utils\gci2pathview.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\board.hpp" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
-    <ClInclude Include="..\Classes\TerrainLayer.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

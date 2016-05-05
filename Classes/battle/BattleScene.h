@@ -7,12 +7,12 @@
 #include "ai.hpp"
 #include "LifeBarLayer.h"
 
-class HelloWorld : public cocos2d::Layer
+class BattleScene : public cocos2d::Layer
 {
   public:
     static cocos2d::Scene* createScene();
 
-    HelloWorld() : player_(board_), ai_(board_) {}
+    BattleScene() : player_(board_), ai_(board_) {}
 
     virtual bool init();
     
@@ -20,7 +20,7 @@ class HelloWorld : public cocos2d::Layer
     void menuCloseCallback(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
-    CREATE_FUNC(HelloWorld);
+    CREATE_FUNC(BattleScene);
 
     void update(float delta) override;
 

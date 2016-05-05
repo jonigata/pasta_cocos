@@ -10,11 +10,11 @@
 #ifndef BOARD_HPP_
 #define BOARD_HPP_
 
-#include "trapezoidal_map.hpp"
-#include "gci.hpp"
-#include "pathview.hpp"
-#include "gci2pathview.hpp"
-#include "color.hpp"
+#include "../utils/trapezoidal_map.hpp"
+#include "../utils/gci.hpp"
+#include "../utils/pathview.hpp"
+#include "../utils/gci2pathview.hpp"
+#include "../utils/color.hpp"
 #include "castle.hpp"
 #include "standard_partawn.hpp"
 #include "station.hpp"

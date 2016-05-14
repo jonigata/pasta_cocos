@@ -383,7 +383,7 @@ public:
     struct Polygon {
         bool    fill;
         std::uint32_t  color;
-        std::vector<cocos2d::Vec> vertices;
+        std::vector<cocos2d::Vec2> vertices;
     };
 
     template <class CB, class PB>

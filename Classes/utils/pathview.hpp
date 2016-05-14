@@ -561,12 +561,14 @@ private:
         PB&     pb,
         const Vec& c,
         float    r) {
+
+        float pi = acos(-1);
         for (int i = 0 ; i <DOT_DIVISION ; i++) {
             float t0 =(1.0f / DOT_DIVISION)*(i);
             float t1 =(1.0f / DOT_DIVISION)*(i + 1);
 
-            t0 *= D3DX_PI * 2.0f;
-            t1 *= D3DX_PI * 2.0f;
+            t0 *= pi * 2.0f;
+            t1 *= pi * 2.0f;
 
             float x0 = cosf(t0)* r;
             float y0 = sinf(t0)* r;

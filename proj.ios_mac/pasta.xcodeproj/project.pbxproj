@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -29,7 +28,6 @@
 		503AE10517EB98FF00D1A890 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503AE10317EB98FF00D1A890 /* main.cpp */; };
 		503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503AE11A17EB9C5A00D1A890 /* IOKit.framework */; };
 		5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		5087E76717EB910900C73F5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		5087E76817EB910900C73F5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
 		5087E76917EB910900C73F5D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		5087E76A17EB910900C73F5D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
@@ -73,12 +71,28 @@
 		C074BBFC1CDF2B7400886CE9 /* gci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBF21CDF2B7400886CE9 /* gci.cpp */; };
 		C074BBFD1CDF2B7400886CE9 /* gci2pathview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBF41CDF2B7400886CE9 /* gci2pathview.cpp */; };
 		C074BBFE1CDF2B7400886CE9 /* gci2pathview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBF41CDF2B7400886CE9 /* gci2pathview.cpp */; };
+		C0D753511D0EB84B0030CDF9 /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBD61CDF2B5600886CE9 /* BattleScene.cpp */; };
+		C0D753521D0EB8670030CDF9 /* LifeBarLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBDA1CDF2B5600886CE9 /* LifeBarLayer.cpp */; };
+		C0D753531D0EB86C0030CDF9 /* TerrainLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBE21CDF2B5600886CE9 /* TerrainLayer.cpp */; };
+		C0D753541D0EB8960030CDF9 /* TerritoryLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBE41CDF2B5600886CE9 /* TerritoryLayer.cpp */; };
+		C0D753551D0EB8960030CDF9 /* water.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBE61CDF2B5600886CE9 /* water.cpp */; };
+		C0D753561D0EB8960030CDF9 /* WaterLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C074BBE81CDF2B5600886CE9 /* WaterLayer.cpp */; };
+		C0D7535B1D0EBCEB0030CDF9 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
+		C0D7535D1D0EBD040030CDF9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D7535C1D0EBD040030CDF9 /* libz.tbd */; };
+		C0D7535F1D0EBD160030CDF9 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D7535E1D0EBD160030CDF9 /* libiconv.tbd */; };
+		C0D753661D0EBED20030CDF9 /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D753601D0EBED20030CDF9 /* libboost_system-mt.dylib */; };
+		C0D753671D0EBED20030CDF9 /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D753611D0EBED20030CDF9 /* libboost_thread-mt.dylib */; };
+		C0D753681D0EBED20030CDF9 /* libCGAL_Core.11.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D753621D0EBED20030CDF9 /* libCGAL_Core.11.0.0.dylib */; };
+		C0D753691D0EBED20030CDF9 /* libCGAL.11.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D753631D0EBED20030CDF9 /* libCGAL.11.0.0.dylib */; };
+		C0D7536A1D0EBED20030CDF9 /* libgmp.10.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D753641D0EBED20030CDF9 /* libgmp.10.dylib */; };
+		C0D7536B1D0EBED20030CDF9 /* libmpfr.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D753651D0EBED20030CDF9 /* libmpfr.4.dylib */; };
+		C0D7536D1D1006D70030CDF9 /* data in Resources */ = {isa = PBXBuildFile; fileRef = C0D7536C1D1006D70030CDF9 /* data */; };
+		C0D7536E1D1006D70030CDF9 /* data in Resources */ = {isa = PBXBuildFile; fileRef = C0D7536C1D1006D70030CDF9 /* data */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
-		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +210,16 @@
 		C074BBF81CDF2B7400886CE9 /* trapezoidal_map.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = trapezoidal_map.hpp; path = utils/trapezoidal_map.hpp; sourceTree = "<group>"; };
 		C074BBFF1CDF2B9200886CE9 /* ai.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ai.hpp; path = battle/ai.hpp; sourceTree = "<group>"; };
 		C074BC001CDF2B9200886CE9 /* basecamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = basecamp.hpp; path = battle/basecamp.hpp; sourceTree = "<group>"; };
+		C0D753571D0EBBC00030CDF9 /* libCGAL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL.dylib; path = ../../../../usr/local/lib/libCGAL.dylib; sourceTree = "<group>"; };
+		C0D7535C1D0EBD040030CDF9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C0D7535E1D0EBD160030CDF9 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		C0D753601D0EBED20030CDF9 /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "../../../../usr/local/Cellar/boost/1.58.0/lib/libboost_system-mt.dylib"; sourceTree = "<group>"; };
+		C0D753611D0EBED20030CDF9 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "../../../../usr/local/Cellar/boost/1.58.0/lib/libboost_thread-mt.dylib"; sourceTree = "<group>"; };
+		C0D753621D0EBED20030CDF9 /* libCGAL_Core.11.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL_Core.11.0.0.dylib; path = ../../../../usr/local/Cellar/cgal/4.6.3/lib/libCGAL_Core.11.0.0.dylib; sourceTree = "<group>"; };
+		C0D753631D0EBED20030CDF9 /* libCGAL.11.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL.11.0.0.dylib; path = ../../../../usr/local/Cellar/cgal/4.6.3/lib/libCGAL.11.0.0.dylib; sourceTree = "<group>"; };
+		C0D753641D0EBED20030CDF9 /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.10.dylib; path = ../../../../usr/local/Cellar/gmp/6.0.0a/lib/libgmp.10.dylib; sourceTree = "<group>"; };
+		C0D753651D0EBED20030CDF9 /* libmpfr.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpfr.4.dylib; path = ../../../../usr/local/Cellar/mpfr/3.1.3/lib/libmpfr.4.dylib; sourceTree = "<group>"; };
+		C0D7536C1D1006D70030CDF9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -229,9 +253,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */,
-				1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */,
-				5087E76717EB910900C73F5D /* libz.dylib in Frameworks */,
+				C0D753661D0EBED20030CDF9 /* libboost_system-mt.dylib in Frameworks */,
+				C0D753671D0EBED20030CDF9 /* libboost_thread-mt.dylib in Frameworks */,
+				C0D753681D0EBED20030CDF9 /* libCGAL_Core.11.0.0.dylib in Frameworks */,
+				C0D753691D0EBED20030CDF9 /* libCGAL.11.0.0.dylib in Frameworks */,
+				C0D7536A1D0EBED20030CDF9 /* libgmp.10.dylib in Frameworks */,
+				C0D7536B1D0EBED20030CDF9 /* libmpfr.4.dylib in Frameworks */,
+				C0D7535F1D0EBD160030CDF9 /* libiconv.tbd in Frameworks */,
+				C0D7535D1D0EBD040030CDF9 /* libz.tbd in Frameworks */,
+				C0D7535B1D0EBCEB0030CDF9 /* libcocos2d Mac.a in Frameworks */,
 				8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */,
 				503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */,
 				5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */,
@@ -297,6 +327,15 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0D753601D0EBED20030CDF9 /* libboost_system-mt.dylib */,
+				C0D753611D0EBED20030CDF9 /* libboost_thread-mt.dylib */,
+				C0D753621D0EBED20030CDF9 /* libCGAL_Core.11.0.0.dylib */,
+				C0D753631D0EBED20030CDF9 /* libCGAL.11.0.0.dylib */,
+				C0D753641D0EBED20030CDF9 /* libgmp.10.dylib */,
+				C0D753651D0EBED20030CDF9 /* libmpfr.4.dylib */,
+				C0D7535E1D0EBD160030CDF9 /* libiconv.tbd */,
+				C0D7535C1D0EBD040030CDF9 /* libz.tbd */,
+				C0D753571D0EBBC00030CDF9 /* libCGAL.dylib */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
@@ -323,6 +362,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C0D7536C1D1006D70030CDF9 /* data */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
@@ -538,6 +578,7 @@
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				C0D7536D1D1006D70030CDF9 /* data in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				C0D7536E1D1006D70030CDF9 /* data in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
@@ -583,9 +625,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C074BBFE1CDF2B7400886CE9 /* gci2pathview.cpp in Sources */,
+				C0D753561D0EB8960030CDF9 /* WaterLayer.cpp in Sources */,
 				C074BBFA1CDF2B7400886CE9 /* color.cpp in Sources */,
+				C0D753541D0EB8960030CDF9 /* TerritoryLayer.cpp in Sources */,
+				C0D753511D0EB84B0030CDF9 /* BattleScene.cpp in Sources */,
+				C0D753531D0EB86C0030CDF9 /* TerrainLayer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				C0D753551D0EB8960030CDF9 /* water.cpp in Sources */,
+				C0D753521D0EB8670030CDF9 /* LifeBarLayer.cpp in Sources */,
 				C074BBFC1CDF2B7400886CE9 /* gci.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,7 +752,12 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/cgal/4.6.3/lib,
+					/usr/local/Cellar/gmp/6.0.0a/lib,
+					/usr/local/Cellar/mpfr/3.1.3/lib,
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -735,7 +788,12 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/cgal/4.6.3/lib,
+					/usr/local/Cellar/gmp/6.0.0a/lib,
+					/usr/local/Cellar/mpfr/3.1.3/lib,
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -747,9 +805,10 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -767,8 +826,10 @@
 					"$(SRCROOT)/../cocos2d/extensions",
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
+					/usr/local/include,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -780,8 +841,9 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -798,8 +860,10 @@
 					"$(SRCROOT)/../cocos2d/extensions",
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
+					/usr/local/include,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";

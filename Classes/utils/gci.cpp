@@ -9,13 +9,13 @@ namespace gci {
 void read_gci(const char* filename, Document& doc, bool yflip) {
     std::ifstream ifs(filename);
 
-    // ƒTƒCƒY
+    // ã‚µã‚¤ã‚º
     ifs >> doc.bbminx;
     ifs >> doc.bbminy;
     ifs >> doc.bbmaxx;
     ifs >> doc.bbmaxy;
 
-    // ’¸“_ƒŠƒXƒg
+    // é ‚ç‚¹ãƒªã‚¹ãƒˆ
     int vertex_count;
     ifs >> vertex_count;
     for (int i = 0 ; i <vertex_count ; i++) {
@@ -26,7 +26,7 @@ void read_gci(const char* filename, Document& doc, bool yflip) {
         doc.vertices.push_back(v);
     }
 
-    // “ü—Íƒ|ƒŠƒSƒ“
+    // å…¥åŠ›ãƒãƒªã‚´ãƒ³
     int input_polygon_count;
     ifs >> input_polygon_count;
     for (int i = 0 ; i <input_polygon_count ; i++) {
@@ -41,7 +41,7 @@ void read_gci(const char* filename, Document& doc, bool yflip) {
         doc.input_polygons.push_back(p);
     }
 
-    // “ü—ÍƒTƒCƒg
+    // å…¥åŠ›ã‚µã‚¤ãƒˆ
     int input_site_count;
     ifs >> input_site_count;
     for (int i = 0 ; i <input_site_count ; i++) {
@@ -59,11 +59,11 @@ void read_gci(const char* filename, Document& doc, bool yflip) {
         doc.sites.push_back(s);
     }
 
-    // ƒ{ƒƒmƒCƒZƒ‹EŽOŠpŒ`•ªŠ„
+    // ãƒœãƒ­ãƒŽã‚¤ã‚»ãƒ«ãƒ»ä¸‰è§’å½¢åˆ†å‰²
     int voronoi_cell_count;
     ifs >> voronoi_cell_count;
     for (int i = 0 ; i <voronoi_cell_count ; i++) {
-        Document::Cell cell;
+        Document::Cell cell;	
         int id;
         ifs >> id >> cell.site_index;
 

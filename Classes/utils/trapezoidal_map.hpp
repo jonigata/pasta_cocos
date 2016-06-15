@@ -2,9 +2,9 @@
 
 /*!
 	@file	  trapezoidal_map.hpp
-	@brief	  <ŠT—v>
+	@brief	  <æ¦‚è¦>
 
-	<à–¾>
+	<èª¬æ˜>
 */
 
 #ifndef TRAPEZOIDAL_MAP_HPP_
@@ -13,6 +13,7 @@
 #include <vector>
 #include <set>
 #include <boost/lexical_cast.hpp>
+#include <fstream>
 // #include "zw/dprintf.hpp"
 
 template <class R, class SegmentProperty>
@@ -98,14 +99,14 @@ public:
         }
 
         bool is_under_point(const Point& p) {
-            // find‚©‚çŒÄ‚Î‚ê‚éŠÖ”
+            // findã‹ã‚‰å‘¼ã°ã‚Œã‚‹é–¢æ•°
 
-            // ã‰º‚Íy²‰ºŒü‚«‚Ål‚¦‚Ä‚¢‚é
+            // ä¸Šä¸‹ã¯yè»¸ä¸‹å‘ãã§è€ƒãˆã¦ã„ã‚‹
 
             if (is_vertical()) {
                 assert(p.x() == p0_.x());
                 if (p.y() < p1_.y()) { return true; }
-                // ü‚Éæ‚Á‚Ä‚¢‚éê‡‚Ífalse TODO: ‚¨‚©‚µ‚­‚È‚¢H
+                // ç·šã«ä¹—ã£ã¦ã„ã‚‹å ´åˆã¯false TODO: ãŠã‹ã—ããªã„ï¼Ÿ
                 return false;
             } else {
                 R sy = calculate_y(p.x());
@@ -114,25 +115,25 @@ public:
         }
 
         bool is_under_segment(Segment* s) {
-            // add_segment‚©‚çŒÄ‚Î‚ê‚éŠÖ”
+            // add_segmentã‹ã‚‰å‘¼ã°ã‚Œã‚‹é–¢æ•°
 
-            // ã‰º‚Íy²‰ºŒü‚«‚Ål‚¦‚Ä‚¢‚é
+            // ä¸Šä¸‹ã¯yè»¸ä¸‹å‘ãã§è€ƒãˆã¦ã„ã‚‹
 
-            // TODO: ‚¨‚©‚µ‚­‚È‚¢H
+            // TODO: ãŠã‹ã—ããªã„ï¼Ÿ
             if (is_vertical()) {
                 if (s->is_vertical()) {
                     if (s->p1().y() <= p0_.y()) { return true; }
-                    assert(p1_.y() <= s->p0().y()); // ¸”sü•ª‚ªd‚È‚Á‚Ä‚é
+                    assert(p1_.y() <= s->p0().y()); // å¤±æ•—ï¼ç·šåˆ†ãŒé‡ãªã£ã¦ã‚‹
                     return false;
                 } else {
                     if (s->p0().y() <= p0_.y()) { return true; }
-                    assert(p1_.y() <= s->p0().y()); // ¸”sü•ª‚ªŒğ·‚µ‚Ä‚é
+                    assert(p1_.y() <= s->p0().y()); // å¤±æ•—ï¼ç·šåˆ†ãŒäº¤å·®ã—ã¦ã‚‹
                     return false;
                 }
             } else {
                 if (s->is_vertical()) {
                     if (s->p1().y() <= p0_.y()) { return true; }
-                    // assert(p0_.y() <= s->p0().y()); // ¸”sü•ª‚ªŒğ·‚µ‚Ä‚é
+                    // assert(p0_.y() <= s->p0().y()); // å¤±æ•—ï¼ç·šåˆ†ãŒäº¤å·®ã—ã¦ã‚‹
                     return false;
                 } else {
                     if (p0_ == s->p0()) {
@@ -286,14 +287,14 @@ private:
         }
 
         void  pass1(int& addr) {
-            if (!set_addr(addr)) { return; }
+            if (!this->set_addr(addr)) { return; }
             addr += 20; // opcode, x, y, then, else
             if (car_) { car_->pass1(addr); }
             if (cdr_) { cdr_->pass1(addr); }
         }
         void pass2(char* b) {
-            int addr = get_addr();
-            char* p = b + get_addr();
+            int addr = this->get_addr();
+            char* p = b + this->get_addr();
             *((boost::uint32_t*)p) = 1;        p += 4;
             *((float*)p) = p_.x();         p += 4;
             *((float*)p) = p_.y();         p += 4;
@@ -394,13 +395,13 @@ private:
         }
 
         void  pass1(int& addr) {
-            if (!set_addr(addr)) { return; }
+            if (!this->set_addr(addr)) { return; }
             addr += 36;// opcode, p0.x, p0.y, p1.x, p1.y, a, b, then, else
             if (car_) { car_->pass1(addr); }
             if (cdr_) { cdr_->pass1(addr); }
         }
         void pass2(char* b) {
-            char* p = b + get_addr();
+            char* p = b + this->get_addr();
             *((boost::uint32_t*)p) = 2;        p += 4;
             *((float*)p) = s_->p0().x();       p += 4;
             *((float*)p) = s_->p0().y();       p += 4;
@@ -463,7 +464,7 @@ private:
         }
 
         void  pass1(int& addr) {
-            if (!set_addr(addr)) { return; }
+            if (!this->set_addr(addr)) { return; }
             child_->pass1(addr);
         }
         void pass2(char*) {}
@@ -611,11 +612,11 @@ private:
         Leaf*  lowerright;
 
         void  pass1(int& addr) {
-            set_addr(addr);
+            this->set_addr(addr);
             addr += 64 + sizeof(SegmentProperty)* 2;
         }
         void pass2(char* b) {
-            char* p = b + get_addr();
+            char* p = b + this->get_addr();
             *((boost::uint32_t*)p) = 3;        p += 4;
             *((float*)p) = top->p0().x();       p += 4;
             *((float*)p) = top->p0().y();       p += 4;
@@ -944,7 +945,7 @@ public:
         Point& p3,
         int& score) const {
         Leaf* leaf = find_leaf(q);
-        if (!leaf) { return false; } // ”ÍˆÍŠO
+        if (!leaf) { return false; } // ç¯„å›²å¤–
         leaf->calculate_trapezoid(p0, p1, p2, p3);
         score = leaf->score();
 #if 0
@@ -964,7 +965,7 @@ public:
         SegmentProperty& top_segment_property,
         SegmentProperty& bottom_segment_property) const {
         Leaf* leaf = find_leaf(q);
-        if (!leaf) { return false; } // ”ÍˆÍŠO
+        if (!leaf) { return false; } // ç¯„å›²å¤–
         leaf->calculate_trapezoid(p0, p1, p2, p3);
         score = leaf->score();
         top_segment_property = leaf->top->property();
@@ -982,7 +983,7 @@ public:
         SegmentProperty& top_segment_property,
         SegmentProperty& bottom_segment_property) const {
         Leaf* leaf = find_leaf(q);
-        if (!leaf) { return false; } // ”ÍˆÍŠO
+        if (!leaf) { return false; } // ç¯„å›²å¤–
         score = leaf->score();
         top_segment_property = leaf->top->property();
         bottom_segment_property = leaf->bottom->property();
@@ -995,7 +996,7 @@ public:
 
     int get_score(const Point& q) {
         Leaf* leaf = find_leaf(&q);
-        if (!leaf) { return 0; } // ”ÍˆÍŠO
+        if (!leaf) { return 0; } // ç¯„å›²å¤–
         return chase_horizontal(leaf);
     }
 
@@ -1127,8 +1128,8 @@ private:
                         } else if (p->upperright->bottom->a()<0) {
                             p = p->upperright;
                         } else {
-                            //ü•ª‚ÆŠ®‘S‚Éd‚È‚Á‚Ä‚¢‚é
-                            p = p->upperright; // ‚Ç‚Á‚¿‚Å‚à‚¢‚¢
+                            //ç·šåˆ†ã¨å®Œå…¨ã«é‡ãªã£ã¦ã„ã‚‹
+                            p = p->upperright; // ã©ã£ã¡ã§ã‚‚ã„ã„
                         }
                     }
                 }
@@ -1152,7 +1153,7 @@ private:
             R cy =(v[i] + v[i+1])* R(0.5);
             if (cy == v[i] || cy == v[i+1]) { continue; }
 
-            // Å¶ƒm[ƒh
+            // æœ€å·¦ãƒãƒ¼ãƒ‰
             Leaf* leaf = tree_->leftmost(cy);
             assert(!leaf->upperleft);
             assert(!leaf->lowerleft);
@@ -1218,8 +1219,8 @@ private:
                             } else if (p->upperright->bottom->a()<0) {
                                 p = p->upperright;
                             } else {
-                                //ü•ª‚ÆŠ®‘S‚Éd‚È‚Á‚Ä‚¢‚é
-                                p = p->upperright; // ‚Ç‚Á‚¿‚Å‚à‚¢‚¢
+                                //ç·šåˆ†ã¨å®Œå…¨ã«é‡ãªã£ã¦ã„ã‚‹
+                                p = p->upperright; // ã©ã£ã¡ã§ã‚‚ã„ã„
                             }
                         }
                     }
@@ -1572,7 +1573,7 @@ public:
             os << ind(1)<< " ADDR" <<(p - b)<< ":" << std::endl;
 
             switch (*((int*)p)) {
-                case 0 : DebugBreak(); break;
+                case 0 : /* DebugBreak(); */ break;
                 case 1:
                     os << ind(2)<< "if (q.x()<float(" << *((float*)(p+4))
                        << ")||" << std::endl;
@@ -1630,12 +1631,12 @@ public:
                        << *((boost::uint32_t*)(p+60))<< ";" << std::endl;
                     os << ind(3)<< "const unsigned char tspb[] = { ";
                     for (size_t i = 0 ; i <sizeof(SegmentProperty); i++) {
-                        os << int(unsigned char(*(p+64+i)))<< ", ";
+                        os << int((unsigned char)(*(p+64+i)))<< ", ";
                     }
                     os << " };" << std::endl;
                     os << ind(3)<< "const unsigned char bspb[] = { ";
                     for (size_t i = 0 ; i <sizeof(SegmentProperty); i++) {
-                        os << int(unsigned char(*(p+64+sizeof(SegmentProperty)+i)))
+                        os << int((unsigned char)(*(p+64+sizeof(SegmentProperty)+i)))
                            << ", ";
                     }
                     os << " };" << std::endl;

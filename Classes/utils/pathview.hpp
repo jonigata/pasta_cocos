@@ -2,9 +2,9 @@
 
 /*!
 	@file	  pathview.hpp
-	@brief	  <ŠT—v>
+	@brief	  <æ¦‚è¦>
 
-	ƒxƒNƒgƒ‹ƒOƒ‰ƒtƒBƒbƒNƒX‚©‚çGPU‚Åˆµ‚¢‚â‚·‚¢’†ŠÔ•\Œ»‚Ö‚Ì•ÏŠ·
+	ãƒ™ã‚¯ãƒˆãƒ«ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‹ã‚‰GPUã§æ‰±ã„ã‚„ã™ã„ä¸­é–“è¡¨ç¾ã¸ã®å¤‰æ›
 */
 
 #ifndef PATHVIEW_HPP_
@@ -12,6 +12,8 @@
 
 #include <cstdint>
 #include "cocos2d.h"
+#include "cgal.hpp"
+#include "color.hpp"
 
 namespace pv {
 
@@ -662,7 +664,7 @@ private:
         typedef CGAL::Circulator_from_iterator<Vertex_iterator>
             Vertex_circulator;
 
-        // yÅ¬‚Ì’¸“_‚ğ’T‚·
+        // yæœ€å°ã®é ‚ç‚¹ã‚’æ¢ã™
         Vertex_iterator top = v.vertices_begin();
         Vertex_iterator i = top; 
 
@@ -676,7 +678,7 @@ private:
             }
         }
 
-        // ƒ\[ƒg—ñ‚ğì‚é
+        // ã‚½ãƒ¼ãƒˆåˆ—ã‚’ä½œã‚‹
         std::vector<std::pair<Vertex_circulator, int>> u;
         Vertex_circulator ctop(v.vertices_begin(), v.vertices_end(), top);
         Vertex_circulator car = ctop; --car;
@@ -802,7 +804,7 @@ private:
 
     bool equal(const Vec& a, const Vec& b) {
         //return D3DXVec2LengthSq(&(a - b))<0.01f;
-        // TODO: Œë·‚Å‚Ü‚­‚è
+        // TODO: èª¤å·®ã§ã¾ãã‚Š
         return sq(a.x - b.x)+ sq(a.y - b.y)<0.01f;
     }
 

@@ -2,9 +2,9 @@
 
 /*!
 	@file	  gci.hpp
-	@brief	  <ŠT—v>
+	@brief	  <æ¦‚è¦>
 
-	<à–¾>
+	<èª¬æ˜Ž>
 */
 
 #ifndef GCI_HPP_

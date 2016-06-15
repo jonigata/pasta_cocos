@@ -14,7 +14,7 @@ class BattleScene : public cocos2d::Layer
 
     BattleScene() : player_(board_), ai_(board_) {}
 
-    virtual bool init();
+    virtual bool init() override;
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);

@@ -326,7 +326,7 @@ private:
             std::vector<Pair>& pairs) {
             for (int i = coords[0][N] ; i <= coords[1][N] ; i++) {
                 c[N] = i;
-                typename If <
+                If <
                     M == N + 1,
                     update_pairs_0,
                     update_pairs_n<M, N+1>>::type::exec(
@@ -355,7 +355,7 @@ private:
             pi.density_repulsive = 0;
 
             int c[Traits::DIMENSION];
-            typename update_pairs_n<Traits::DIMENSION, 0>::exec(
+            update_pairs_n<Traits::DIMENSION, 0>::exec(
                 pi, ht, coords, c, pairs_);
         }
     }

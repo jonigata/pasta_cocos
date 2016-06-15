@@ -44,7 +44,7 @@ public:
             std::remove_if(
                 partawns_.begin(),
                 partawns_.end(),
-                [](auto p) {
+                [](std::shared_ptr<IPartawn> p) {
                     return p->life() < 0.0f;
                 }),
             partawns_.end());
@@ -53,7 +53,7 @@ public:
             std::remove_if(
                 stations_.begin(),
                 stations_.end(),
-                [](auto p) { return p->life() < 0.0f; }),
+                [](std::shared_ptr<IPartawn> p) { return p->life() < 0.0f; }),
             stations_.end());
 
     }
